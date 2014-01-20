@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+	<appender name="stdout" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<!-- Pattern to output the caller's file name and line number -->
+			<param name="ConversionPattern" value="%5p [%t] (%F:%L) %m%n" />
+		</layout>
+
+		<File name="fileOut" fileName="bankapp.log">
+			<PatternLayout>
+				<pattern>%d %p %c{1.} [%t] %m%n</pattern>
+			</PatternLayout>
+		</File>
+	</appender>
+
+	<logger name="com.softexploration.lab.bankapp" additivity="false">
+		<level value="debug" />
+		<appender-ref ref="fileOut" />
+	</logger>
+
+
+	<root>
+		<priority value="warn" />
+		<appender-ref ref="stdout" />
+	</root>
+</log4j:configuration>

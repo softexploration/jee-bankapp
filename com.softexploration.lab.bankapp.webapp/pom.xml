@@ -1,0 +1,60 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.softexploration.lab.bankapp</groupId>
+	<artifactId>com.softexploration.lab.bankapp.webapp</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+
+	<name>com.softexploration.lab.bankapp.webapp</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+
+	<parent>
+		<groupId>com.softexploration.lab.bankapp</groupId>
+		<artifactId>com.softexploration.lab.bankapp.core</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>../com.softexploration.lab.bankapp.core/pom.xml</relativePath>
+	</parent>
+
+
+	<dependencies>
+		<dependency>
+			<groupId>com.softexploration.lab.bankapp</groupId>
+			<artifactId>com.softexploration.lab.bankapp.ext.accounts.api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.softexploration.lab.bankapp</groupId>
+			<artifactId>com.softexploration.lab.bankapp.ext.domain</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.softexploration.lab.bankapp</groupId>
+			<artifactId>com.softexploration.lab.bankapp.ext.domain.impl</artifactId>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.3</version>
+				<configuration>
+					<!-- <packagingExcludes>WEB-INF/lib/*.jar</packagingExcludes> -->
+					<!-- <warName></warName> <webappDirectory></webappDirectory -->
+					<archive>
+						<manifest>
+							<addClasspath>true</addClasspath>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

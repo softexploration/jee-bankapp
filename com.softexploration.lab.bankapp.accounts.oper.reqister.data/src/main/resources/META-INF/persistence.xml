@@ -1,0 +1,9 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
+	version="1.0">
+	<persistence-unit name="bankapp" transaction-type="JTA">
+		<jta-data-source>jdbc/bankappDS</jta-data-source>
+		<class>com.softexploration.lab.bankapp.accounts.oper.reqister.data.entities.OperationRegisterEntry</class>
+	</persistence-unit>
+</persistence>

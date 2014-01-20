@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ejb-jar xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	version="3.0"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/ejb-jar_3_0.xsd">
+
+	<enterprise-beans>
+		<session>
+			<description>Desc of DefaultUserDataService</description>
+			<display-name>DisplayDefaultUserDataService</display-name>
+			<ejb-name>DefaultUserDataService</ejb-name>
+			<local>com.softexploration.lab.bankapp.users.data.UserDataService</local>
+			<ejb-class>com.softexploration.lab.bankapp.users.data.impl.DefaultUserDataService</ejb-class>
+			<session-type>Stateless</session-type>
+			<transaction-type>Container</transaction-type>
+
+		</session>
+	</enterprise-beans>
+
+</ejb-jar>

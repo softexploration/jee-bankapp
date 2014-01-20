@@ -1,0 +1,187 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.softexploration.lab.bankapp</groupId>
+	<artifactId>com.softexploration.lab.bankapp.core.app</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>ear</packaging>
+
+	<name>com.softexploration.lab.bankapp.core.app</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<parent>
+		<groupId>com.softexploration.lab.bankapp</groupId>
+		<artifactId>com.softexploration.lab.bankapp.core</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>../com.softexploration.lab.bankapp.core/pom.xml</relativePath>
+	</parent>
+
+
+	<dependencies>
+		<dependency>
+			<groupId>com.softexploration.lab.bankapp</groupId>
+			<artifactId>com.softexploration.lab.bankapp.accounts.facade</artifactId>
+			<type>ejb</type>
+		</dependency>
+		<dependency>
+			<groupId>com.softexploration.lab.bankapp</groupId>
+			<artifactId>com.softexploration.lab.bankapp.accounts.data</artifactId>
+			<type>ejb</type>
+		</dependency>
+		<dependency>
+			<groupId>com.softexploration.lab.bankapp</groupId>
+			<artifactId>com.softexploration.lab.bankapp.accounts.service</artifactId>
+			<type>ejb</type>
+		</dependency>
+		<dependency>
+			<groupId>com.softexploration.lab.bankapp</groupId>
+			<artifactId>com.softexploration.lab.bankapp.accounts.service.create.process</artifactId>
+			<type>ejb</type>
+		</dependency>
+
+		<dependency>
+			<groupId>com.softexploration.lab.bankapp</groupId>
+			<artifactId>com.softexploration.lab.bankapp.webapp</artifactId>
+			<type>war</type>
+		</dependency>
+
+		<dependency>
+			<groupId>com.softexploration.lab.bankapp</groupId>
+			<artifactId>com.softexploration.lab.bankapp.accounts.service.create.finalize</artifactId>
+			<type>ejb</type>
+		</dependency>
+
+		<dependency>
+			<groupId>com.softexploration.lab.bankapp</groupId>
+			<artifactId>com.softexploration.lab.bankapp.accounts.oper.reqister.data</artifactId>
+			<type>ejb</type>
+		</dependency>
+		<dependency>
+			<groupId>com.softexploration.lab.bankapp</groupId>
+			<artifactId>com.softexploration.lab.bankapp.accounts.oper.reqister</artifactId>
+			<type>ejb</type>
+		</dependency>
+
+
+		<dependency>
+			<groupId>com.softexploration.lab.bankapp</groupId>
+			<artifactId>com.softexploration.lab.bankapp.users.facade</artifactId>
+			<type>ejb</type>
+		</dependency>
+		<dependency>
+			<groupId>com.softexploration.lab.bankapp</groupId>
+			<artifactId>com.softexploration.lab.bankapp.users.service.create.process</artifactId>
+			<type>ejb</type>
+		</dependency>
+		<dependency>
+			<groupId>com.softexploration.lab.bankapp</groupId>
+			<artifactId>com.softexploration.lab.bankapp.users.service.create.finalize</artifactId>
+			<type>ejb</type>
+		</dependency>
+		<dependency>
+			<groupId>com.softexploration.lab.bankapp</groupId>
+			<artifactId>com.softexploration.lab.bankapp.users.service</artifactId>
+			<type>ejb</type>
+		</dependency>
+		<dependency>
+			<groupId>com.softexploration.lab.bankapp</groupId>
+			<artifactId>com.softexploration.lab.bankapp.users.data</artifactId>
+			<type>ejb</type>
+		</dependency>
+
+		<dependency>
+			<groupId>com.softexploration.lab.bankapp</groupId>
+			<artifactId>com.softexploration.lab.bankapp.cmn.service</artifactId>
+			<type>ejb</type>
+		</dependency>
+		<dependency>
+			<groupId>com.softexploration.lab.bankapp</groupId>
+			<artifactId>com.softexploration.lab.bankapp.cmn.service.facade</artifactId>
+			<type>ejb</type>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-ear-plugin</artifactId>
+				<version>2.8</version>
+				<configuration>
+					<defaultLibBundleDir>APP-INF/lib</defaultLibBundleDir>
+					<modules>
+						<ejbModule>
+							<groupId>com.softexploration.lab.bankapp</groupId>
+							<artifactId>com.softexploration.lab.bankapp.accounts.facade</artifactId>
+						</ejbModule>
+
+						<ejbModule>
+							<groupId>com.softexploration.lab.bankapp</groupId>
+							<artifactId>com.softexploration.lab.bankapp.accounts.data</artifactId>
+						</ejbModule>
+						<ejbModule>
+							<groupId>com.softexploration.lab.bankapp</groupId>
+							<artifactId>com.softexploration.lab.bankapp.accounts.service</artifactId>
+						</ejbModule>
+						<ejbModule>
+							<groupId>com.softexploration.lab.bankapp</groupId>
+							<artifactId>com.softexploration.lab.bankapp.accounts.service.create.process</artifactId>
+						</ejbModule>
+
+						<webModule>
+							<groupId>com.softexploration.lab.bankapp</groupId>
+							<artifactId>com.softexploration.lab.bankapp.webapp</artifactId>
+						</webModule>
+						<ejbModule>
+							<groupId>com.softexploration.lab.bankapp</groupId>
+							<artifactId>com.softexploration.lab.bankapp.accounts.service.create.finalize</artifactId>
+						</ejbModule>
+						<ejbModule>
+							<groupId>com.softexploration.lab.bankapp</groupId>
+							<artifactId>com.softexploration.lab.bankapp.accounts.oper.reqister.data</artifactId>
+						</ejbModule>
+						<ejbModule>
+							<groupId>com.softexploration.lab.bankapp</groupId>
+							<artifactId>com.softexploration.lab.bankapp.accounts.oper.reqister</artifactId>
+						</ejbModule>
+
+						<ejbModule>
+							<groupId>com.softexploration.lab.bankapp</groupId>
+							<artifactId>com.softexploration.lab.bankapp.users.facade</artifactId>
+						</ejbModule>
+						<ejbModule>
+							<groupId>com.softexploration.lab.bankapp</groupId>
+							<artifactId>com.softexploration.lab.bankapp.users.service.create.process</artifactId>
+						</ejbModule>
+						<ejbModule>
+							<groupId>com.softexploration.lab.bankapp</groupId>
+							<artifactId>com.softexploration.lab.bankapp.users.service.create.finalize</artifactId>
+						</ejbModule>
+						<ejbModule>
+							<groupId>com.softexploration.lab.bankapp</groupId>
+							<artifactId>com.softexploration.lab.bankapp.users.service</artifactId>
+						</ejbModule>
+						<ejbModule>
+							<groupId>com.softexploration.lab.bankapp</groupId>
+							<artifactId>com.softexploration.lab.bankapp.users.data</artifactId>
+						</ejbModule>
+
+						<ejbModule>
+							<groupId>com.softexploration.lab.bankapp</groupId>
+							<artifactId>com.softexploration.lab.bankapp.cmn.service</artifactId>
+						</ejbModule>
+						<ejbModule>
+							<groupId>com.softexploration.lab.bankapp</groupId>
+							<artifactId>com.softexploration.lab.bankapp.cmn.service.facade</artifactId>
+						</ejbModule>
+					</modules>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
